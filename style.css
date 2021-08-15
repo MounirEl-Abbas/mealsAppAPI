@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Poppins&family=Roboto+Condensed&family=Roboto+Mono&family=Varela+Round&display=swap");
+.theme-one {
+  --clr-one: #212922;
+  --clr-two: #7798ab;
+  --clr-three: #c3dbc5;
+  --clr-four: #e8dcb9;
+  --clr-five: #c05746;
+  --clr-six: #d16f60;
+  --white-font: #fff;
+  --ff-main: "Varela Round", sans-serif;
+  --ff-secondary: "Poppins", sans-serif;
+  --theme-clr-one: #212922;
+  --theme-clr-two: #c05746;
+  --text-color: #000;
+}
+.theme-two {
+  --clr-one: #212922;
+  --clr-two: #181d27;
+  --clr-three: #c3dbc5;
+  --clr-four: #d0db97;
+  --clr-five: #254d32;
+  --clr-six: #3a7d44;
+  --white-font: #fff;
+  --ff-main: "Montserrat", sans-serif;
+  --ff-secondary: "Nunito", sans-serif;
+  --theme-clr-one: #212922;
+  --theme-clr-two: #254d32;
+  --text-color: #000;
+}
+.theme-three {
+  --clr-one: #212922;
+  --clr-two: #eb5e28;
+  --clr-three: #ccc5b9;
+  --clr-four: #403d39;
+  --clr-five: #252422;
+  --clr-six: #403d39;
+  --white-font: #fff;
+  --ff-main: "Roboto Mono", monospace;
+  --ff-secondary: "Roboto Condensed", sans-serif;
+  --theme-clr-one: #ccc5b9;
+  --theme-clr-two: #eb5e28;
+  --text-color: #fff;
+}
+
+/*=================
+General Layout
+=================*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: var(--clr-four);
+}
+/*=================
+Header  / Nav-bar
+=================*/
+header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: var(--clr-five);
+  padding: 10px 0;
+  border-bottom: var(--clr-two) 5px solid;
+}
+header > input {
+  width: 60%;
+  max-width: 480px;
+  height: 60px;
+  border: 3px solid var(--clr-six);
+  border-radius: 4px;
+  padding: 10px;
+  outline: none;
+  background: var(--clr-six);
+  color: var(--white-font);
+  font-family: var(--ff-main);
+  font-size: 18px;
+}
+header > input::placeholder {
+  color: var(--white-font);
+}
+header > input:focus {
+  border: 3px solid var(--clr-two);
+}
+.button-container {
+  max-width: 140px;
+  width: 30%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.button-container > button {
+  margin-left: 2px;
+  height: 50%;
+  background: transparent;
+  border: var(--clr-six) 3px outset;
+  color: var(--white-font);
+  font-family: var(--ff-main);
+  cursor: pointer;
+}
+.button-container > button:active {
+  border: var(--clr-six) 3px inset;
+}
+/*=================
+Themes Toggle
+=================*/
+.theme-toggle {
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  top: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60px;
+  height: 20px;
+  background-color: rgba(245, 245, 245, 0.4);
+  border-radius: 15px;
+  cursor: pointer;
+}
+.theme-toggle::before {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 18px;
+  left: 2px;
+  font-family: "Nunito", sans-serif;
+  font-size: 10px;
+  color: var(--text-color);
+  letter-spacing: 5px;
+}
+.theme-toggle div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+#theme-one {
+  transition: all 1s ease;
+  background-color: var(--theme-clr-two);
+}
+
+/*======================================================
+Recipe View
+======================================================*/
+main {
+  margin: auto;
+  max-width: 800px;
+  color: var(--text-color);
+}
+.recipe-container {
+  margin: 20px;
+  text-align: center;
+  font-family: var(--ff-secondary);
+}
+/* Title */
+.recipe-title {
+  display: grid;
+  grid-template-columns: 90% 5%;
+  align-items: center;
+}
+.recipe-title > h1 {
+  padding-left: 10%;
+}
+.recipe-title > h1 > a {
+  font-size: 12px;
+}
+.recipe-title > a {
+  color: red;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 10px;
+}
+/*=================
+About Recipe
+=================*/
+.recipe-information {
+}
+/* Recipe Information */
+.information > img {
+  width: 95%;
+  max-width: 500px;
+  border: 4px solid var(--clr-two);
+  transition: all 0.3s linear;
+}
+/* All text */
+.information :not(img) {
+  text-align: left;
+  padding-left: 2.5%;
+  line-height: 30px;
+}
+/* Category/Area/Tags */
+.information > p {
+  font-size: 14px;
+}
+
+ul::before {
+  content: attr(aria-label);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.ingredients > li {
+  line-height: 24px;
+  list-style: none;
+  font-weight: 400;
+  padding: 0;
+  padding-left: 10px;
+  font-size: 14px;
+  text-decoration: none;
+}
+ul {
+  text-decoration: none;
+}
+.ingredients > li:last-child {
+  margin-bottom: 15px;
+}
+/* Recipe Instructions */
+.recipe-instructions {
+  text-align: left;
+  letter-spacing: 1px;
+  padding-left: 2.5%;
+  font-size: 14px;
+}
+.recipe-instructions::before {
+  content: attr(aria-label);
+  font-size: 16px;
+  display: block;
+  font-weight: 600;
+}
+
+/*======================================================
+Categories View
+======================================================*/
+.categories-container {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.category {
+  font-family: var(--ff-main);
+  /* letter-spacing: 2px; */
+  margin: 5px 5px;
+  max-width: 300px;
+  border: 4px solid var(--clr-two);
+  background-color: var(--clr-three);
+  /* border-top: none; */
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.category:hover {
+  transform: scale(1.2);
+}
+.category > img {
+  max-width: 300px;
+}
+/*======================================================
+Meals View
+======================================================*/
+.meals-container {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.meal {
+  margin: 5px 5px;
+  max-width: 300px;
+  border: 4px solid var(--clr-two);
+  background: var(--clr-six);
+  color: var(--white-font);
+  font-family: var(--ff-main);
+  letter-spacing: 2px;
+  border-bottom: none;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  text-align: center;
+}
+.meal:hover {
+  transform: scale(1.2);
+}
+.meal > h3 {
+  padding-top: 5px;
+  height: 20%;
+}
+.meal > img {
+  height: 80%;
+  width: 100%;
+  /* max-width: 300px; */
+}
+/*======================================================
+Desktop View
+======================================================*/
+@media (min-width: 860px) {
+  /* Header */
+  .theme-toggle {
+    top: 30px;
+  }
+
+  .button-container {
+    flex-flow: row nowrap;
+    align-items: center;
+    max-width: 240px;
+  }
+  .button-container > button {
+    height: 100%;
+    border: var(--clr-six) 5px outset;
+    width: 100px;
+    margin-left: 5px;
+  }
+  /* Layout Changes*/
+  main {
+    color: #000;
+    max-width: none;
+    display: grid;
+    place-items: center;
+  }
+  .recipe-container {
+    max-width: 1200px;
+    margin: 10px 20px;
+    background: var(--clr-three);
+    border: 4px solid var(--clr-two);
+    display: grid;
+    grid-template-columns: 30% 1fr 1fr;
+    grid-template-rows: 100px 100%;
+    grid-template-areas:
+      "mealName mealName mealName"
+      "mealInfo mealInstruct mealInstruct";
+  }
+
+  .recipe-title {
+    grid-area: mealName;
+  }
+  .recipe-information {
+    grid-area: mealInfo;
+  }
+  .recipe-instructions {
+    grid-area: mealInstruct;
+  }
+
+  /* Minor changes */
+  .recipe-title {
+    font-size: 20px;
+  }
+  /* Recipe information */
+  .information > img:hover {
+    transform: scale(1.5);
+  }
+  /* Info text */
+  .information :not(img) {
+    font-size: 16px;
+  }
+  /* Ingredients title text */
+  ul::before {
+    content: attr(aria-label);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .recipe-instructions {
+    max-width: 700px;
+    font-size: 16px;
+  }
+}
+/*  
+  */
+.recipe-container {
+  display: none;
+}
+.categories-container {
+  display: none;
+}
+.meals-container {
+  display: none;
+}
+/*
+*/
+/*=================
+General Layout
+=================*/
+/*=================
+General Layout
+=================*/
+/*=================
+General Layout
+=================*/
