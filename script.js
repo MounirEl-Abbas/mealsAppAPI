@@ -74,8 +74,7 @@ function searchMeal(e){
 
 // Click Random button > Get Random Meal from API, then populate DOM
 function getRandomMeal(){
-  console.log('random')
-  fetch(`https:/www.themealdb.com/api/json/v1/1/random.php`)
+  fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
   .then(res => res.json())
   .then(data => {
     let mealObj = data.meals[0]
